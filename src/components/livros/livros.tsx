@@ -5,7 +5,7 @@ interface Livro {
   title: string;
   author: string;
   category: string;
-  person: string;
+  name: string;
   recomendation:number;
 }
 
@@ -16,7 +16,7 @@ const Livraria: React.FC<{ livro: Livro }> = ({ livro }) => {
         <p>{livro.title}</p>
         <p>{livro.author}</p>
         <p>{livro.category}</p>
-        <p>{livro.person}</p>
+        <p>{livro.name}</p>
         <p>{livro.recomendation}</p>
         <Botao />
       </div>
