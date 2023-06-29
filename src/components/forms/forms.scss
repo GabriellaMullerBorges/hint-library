@@ -1,0 +1,13 @@
+.form {
+    background-color: red;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.form-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: yellow;
+}
