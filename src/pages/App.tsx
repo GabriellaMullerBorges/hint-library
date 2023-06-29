@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import Botao from './components/botao';
+import Botao from '../components/botao';
+import './style.scss';
+
+
 
 
 function App() {
@@ -14,10 +17,10 @@ function App() {
   ]);
 
   return (
-    <div className="App">
+    <div className="AppStyle">
       <h1>Hint Library</h1>
       <div className='lista-livros'>
-        {livros.map((livro)=> (
+        {livros.map((livro, conteudo)=> (
           <div className='livro'>
             <div className='content'>
               <p>{livro.title}</p>

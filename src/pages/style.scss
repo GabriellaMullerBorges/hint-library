@@ -1,0 +1,45 @@
+
+  body {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0; 
+  }
+  
+.AppStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 70vw; /* Alterando para 50% da largura da janela de visualização */
+    margin-left: auto; /* Adicionando margem à esquerda para centralizar horizontalmente */
+    margin-right: auto; /* Adicionando margem à direita para centralizar horizontalmente */
+    text-align: center;
+  }
+  
+  .lista-livros {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    width: 100%;
+  }
+
+  .livro {
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+    width: 100%;
+  }
+
+  .content{
+    display: flex;
+    flex-direction: row;
+    background-color: pink;
+    justify-content: space-around;
+    width: 100%;
+  }
