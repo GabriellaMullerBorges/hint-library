@@ -8,6 +8,7 @@ function Cabecalho() {
         <p>Categoria</p>
         <p>Seu Nome</p>
         <p>Recomendações</p>
+        <p>Recomendar</p>
     </div>
   )
 }

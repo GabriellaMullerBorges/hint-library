@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap');
+
+.livro{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Space Mono', monospace;;
+    background-color: rgb(65, 64, 64);
+    justify-content: space-between;
+    min-width: 90vw;
+    max-width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white;
+    color: #7D6E83;
+}
+
+.titulo-div {
+    color: #343135 !important;
+    font-size: 26px;
+}
+
+
+.category-color{
+    width:fit-content;
+    border: 1px solid #7D6E83;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.recomendation-div {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

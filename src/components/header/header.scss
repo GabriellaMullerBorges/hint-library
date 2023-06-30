@@ -1,12 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap');
 
 .header {
-
+    background: linear-gradient(to top, #7D6E83,#D0B8A8);
+    height: 25vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 15px;
 }
 
 .app-title {
-    font-family: 'poppins', sans-serif;
-    font-size: 82px;
+    font-family: 'Space Mono', monospace;
+    font-size: 62px;
+    font-weight: bold;
+    font-style: italic;
     color: rgb(241, 243, 243);
 }

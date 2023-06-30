@@ -36,8 +36,8 @@ function App() {
   return (
     <div className='wraper'>
       <Header />
+      <LivroForm addLivro={addLivro}/>
       <div className="AppStyle">
-        <LivroForm addLivro={addLivro}/>
         <div className='lista-livros'>
           <Cabecalho/>
           {livros.map((livro, conteudo)=> (

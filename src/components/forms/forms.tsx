@@ -40,9 +40,11 @@ function LivroForm({ addLivro }: LivroFormProps) {
                 <option value="nao-ficcao">Não-Ficção</option>
             </select>
             <input type='text' placeholder='Seu nome' className='nome' value={name} onChange={(e)=> setName(e.target.value)}></input>
-        <button type="submit">OK</button>
         </form>
-        </div>
+        <div className='button-div'>
+          <button type="submit">OK</button>
+        </div>        
+    </div>
   )
 }
 
