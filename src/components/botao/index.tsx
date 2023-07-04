@@ -6,7 +6,6 @@ class Botao extends React.Component {
     render() {
         return(
             <button className="botao">
-                Like
             </button>
         )
     }

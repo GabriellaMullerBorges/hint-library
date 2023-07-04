@@ -1,8 +1,17 @@
 .botao {
-    align-self: center;
-    background-color: rgb(15, 16, 29);
-    color:white;
-    width: fit-content;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2415/2415418.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: contrast(150%);
+    background-size: contain;
+    width: 30px;
+    height: 35px;
     border-radius: 10px;
+    border: none;
+
+
+    &:hover {
+        transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+      }
 
 }
