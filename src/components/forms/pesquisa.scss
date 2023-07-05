@@ -1,0 +1,33 @@
+.separacao {
+    background-color: #4F709C ;
+    display: flex;
+    height: 5vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.campo-pesquisa{
+    width:60%;
+    background-color: white;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 5px;
+    border: 2px solid #375991;
+    border-radius: 8px;
+}
+
+.campo-pesquisa input {
+    width:92%;
+    height: fit-content;
+    border: none;
+    outline: none;
+    
+}
+
+.campo-pesquisa button {
+    background-color: transparent;
+    border: none;
+}

@@ -1,8 +1,10 @@
 import React from 'react';
-import Botao from '../botao/index';
+import Botao from '../botao/botao';
 import './livros.scss';
+import './excluir.scss';
 
 interface Livro {
+  id: number;
   title: string;
   author: string;
   category: string;
@@ -10,7 +12,7 @@ interface Livro {
   recomendation:number;
 }
 
-const Livraria: React.FC<{ livro: Livro }> = ({ livro }) => {
+const Livraria: React.FC<{ livro: Livro, removeLivro: (id: number) => void }> = ({ livro, removeLivro }) => {
   return (
     <div className='livro'>
       <div className='content'>
@@ -32,7 +34,8 @@ const Livraria: React.FC<{ livro: Livro }> = ({ livro }) => {
       <div className='recomendation-div'>
             <Botao />  
             <p>{livro.recomendation}</p>
-        </div>
+      </div>
+      <button className='excluir' onClick={() => removeLivro(livro.id)}>X</button>
     </div>
   );
 };

@@ -1,6 +1,4 @@
-import React from 'react';
-
-import {useState} from 'react'
+import React, { useState } from 'react';
 import './forms.scss';
 type AddLivroFn = (title: string, author: string, category: string, person: string) => void;
 
@@ -8,13 +6,13 @@ interface LivroFormProps {
   addLivro: AddLivroFn;
 }
 
-function LivroForm({ addLivro }: LivroFormProps) {
+const LivroForm = ({ addLivro }: LivroFormProps)  => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>)=> {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(title, author, category, name);
 
@@ -37,15 +35,15 @@ function LivroForm({ addLivro }: LivroFormProps) {
             <input type='text' placeholder='Autor' className='autor' value={author} onChange={(e)=> setAuthor(e.target.value)}></input>
             <select value={category} onChange={(e)=> setCategory(e.target.value)}>
                 <option value="">Selecione uma categoria</option>
-                <option value="profissional">Profissional</option>
-                <option value="ficcao">Ficção</option>
-                <option value="nao-ficcao">Não-Ficção</option>
+                <option value="Profissional">Profissional</option>
+                <option value="Ficção">Ficção</option>
+                <option value="Não-Ficção">Não-Ficção</option>
             </select>
             <input type='text' placeholder='Seu nome' className='nome' value={name} onChange={(e)=> setName(e.target.value)}></input>
-        </form>
-        <div className='button-div'>
+          <div className='button-div'>
           <button type="submit">OK</button>
-        </div>        
+        </div>  
+        </form>     
     </div>
   )
 }

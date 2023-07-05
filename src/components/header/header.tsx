@@ -2,10 +2,10 @@ import React from 'react'
 import './header.scss';
 import './dropdown.scss';
 
-const Header = () => {
+const Header = ()=> {
   return (
     <div className='header'>
-        <h1 className='app-title'>Hint Library</h1>
+        <h1 className='app-title'>HINT LIBRARY</h1>
         <div className='dropdown'>
           <a className="dropdownlink" id='dropdownlink-principal' href="#">
           <span></span>
