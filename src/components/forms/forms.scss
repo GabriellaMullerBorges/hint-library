@@ -1,29 +1,53 @@
 .form {
     width: 100%;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #E4DCCF;
     height: fit-content;
-    justify-content: space-between;
     box-sizing: border-box;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 2px;
 }
 
 .form-content {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: flex-end;
     flex-wrap: wrap;
     padding: 2px 0;
-    width: 90%;
     align-items: center;
+    gap: 5px;
 }
 
+.form-content input,.form-content select {
+    border-radius: 10px;
+    border: 1px solid #c54242;
+    padding-left: 5px;
+}
+
+select option {
+    &:hover{
+        background-color: #3C486B;
+        cursor: pointer;
+    }
+}  /*ARRUMAR*/
+
 .button-div {
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+}
+
+.button-div button {
+    background-color:  #c54242;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: #3C486B;
+        cursor: pointer;
+    }
 }
 
 form input, form select {

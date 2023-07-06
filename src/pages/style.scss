@@ -5,11 +5,10 @@
 }
 
 body {
+  width: 100%;
   background-color: #F0F0F0;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 #root {
@@ -52,7 +51,9 @@ body {
 .filtro-pesquisa-wrap {
   display: flex;
   background-color: #F45050;
-  width:100%;
-  min-width: fit-content;
+  align-items: center;
+  justify-content: space-around;
   flex-wrap: wrap;
+  padding: 5px;
+  box-sizing: border-box;
 }

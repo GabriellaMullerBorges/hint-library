@@ -4,13 +4,15 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width:70%;
-    min-width: fit-content;
+    width: auto;
     flex-wrap: wrap;
+    box-sizing: border-box;
+    min-width: 50%;
+    margin-right: 10px;
 }
 
 .campo-pesquisa{
-    width:60%;
+    width:100%;
     background-color: white;
     height: 3vh;
     display: flex;
@@ -18,7 +20,7 @@
     align-items: center;
     padding: 1px 5px;
     border: 2px solid #c54242;
-    border-radius: 8px;
+    border-radius: 8px;  
 }
 
 .campo-pesquisa input {
@@ -26,6 +28,7 @@
     height: fit-content;
     border: none;
     outline: none;
+    box-sizing: border-box;
     
 }
 
