@@ -1,10 +1,12 @@
 .separacao {
-    background-color: #4F709C ;
     display: flex;
     height: 5vh;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    width:70%;
+    min-width: fit-content;
+    flex-wrap: wrap;
 }
 
 .campo-pesquisa{
@@ -15,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1px 5px;
-    border: 2px solid #375991;
+    border: 2px solid #c54242;
     border-radius: 8px;
 }
 

@@ -6,16 +6,8 @@ const Header = ()=> {
   return (
     <div className='header'>
         <h1 className='app-title'>HINT LIBRARY</h1>
-        <div className='dropdown'>
-          <a className="dropdownlink" id='dropdownlink-principal' href="#">
-          <span></span>
-          </a>
-          <div className='dropdown-menu'>
-            <a className="dropdownlink" href="#">Todos</a>
-            <a className="dropdownlink" href="#">Ficção</a>
-            <a className="dropdownlink" href="#">Não-Ficção</a>
-            <a className="dropdownlink" href="#">Profissional</a>
-          </div>
+        <div className='description'>
+          <p>Dê indicações, e curta seus livros preferidos</p>
         </div>
     </div>
   )

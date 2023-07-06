@@ -1,4 +1,5 @@
 import React from 'react';
+import './filter.scss';
 
 interface Props {
   filter: string;
@@ -9,8 +10,8 @@ const Filter: React.FC<Props> = ({ filter, setFilter }) => {
   return (
     <div className='filter'>
       <div className="filter-options">
-        <div className="filtro-categorias">
-          <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <div >
+          <select className="filtro-categorias" value={filter} onChange={(e) => setFilter(e.target.value)}>
             <option value="All">Todas as categorias</option>
             <option value="Ficção">Ficção</option>
             <option value="Não-Ficção">Não-Ficção</option>

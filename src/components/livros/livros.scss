@@ -4,25 +4,24 @@
     display: flex;
     flex-direction: row;
     font-family: 'Space Mono', monospace;;
-    background-color: rgb(65, 64, 64);
     justify-content: space-between;
     min-width: 90vw;
     max-width: 100%;
     border-radius: 8px;
     padding: 10px;
+    color:  #4e515c;
     background-color: white;
-    color: #7D6E83;
 }
 
 .titulo-div {
-    color: #343135 !important;
+    color: #3C486B!important;
     font-size: 26px;
 }
 
 
 .category-color{
     width:fit-content;
-    border: 1px solid #7D6E83;
+    border: 1px solid #3C486B;
     border-radius: 5px;
     padding: 1px;
 }
@@ -30,7 +29,15 @@
 .recomendation-div {
     width: 20%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+}
+
+.like, .dislike {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }

@@ -4,29 +4,32 @@ import './livros.scss';
 import './excluir.scss';
 import BotaoDown from '../botoes/botaoDown';
 
+interface Livro {
+  id: number;
+  title: string;
+  author: string;
+  category: string;
+  name: string;
+  like: number;
+  dislike: number;
+}
+
 interface LivrariaProps {
-  livro: {
-    id: number;
-    title: string;
-    author: string;
-    category: string;
-    name: string;
-    like: number;
-    dislike: number;
-  };
+  livro: Livro;
   removeLivro: (id: number) => void;
-  updateLivro: (livro: { id: number; like: number; dislike: number }) => void;
+  updateLivro: (livro: Livro) => void;
 }
 
 const Livraria: React.FC<LivrariaProps> = ({ livro, removeLivro, updateLivro }) => {
 
   const incrementDislike = () => {
     console.log(livro.dislike)
-    updateLivro({ id: livro.id, dislike: (livro.dislike + 1),like: livro.like });
+    updateLivro({ ...livro, dislike: livro.dislike + 1 });
   };
+
   const incrementRecomendation = () => {
     console.log(livro.like)
-    updateLivro({ id: livro.id, like: (livro.like + 1), dislike: livro.dislike });
+    updateLivro({ ...livro, like: livro.like + 1 });
   };
 
   return (
@@ -48,10 +51,14 @@ const Livraria: React.FC<LivrariaProps> = ({ livro, removeLivro, updateLivro }) 
         </div>
       </div>
       <div className='recomendation-div'>
+        <div className='like'>
         <Botao incrementRecomendation={incrementRecomendation} />
         <p>{livro.like}</p>
+        </div>
+        <div className="dislike">
         <BotaoDown incrementDislike={incrementDislike} />
         <p>{livro.dislike}</p>
+        </div>
       </div>
       <button className='excluir' onClick={() => removeLivro(livro.id)}>
         X
@@ -61,3 +68,4 @@ const Livraria: React.FC<LivrariaProps> = ({ livro, removeLivro, updateLivro }) 
 };
 
 export default Livraria;
+

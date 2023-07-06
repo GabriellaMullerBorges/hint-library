@@ -1,0 +1,22 @@
+.filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:30%;
+    min-width: fit-content;
+    flex-wrap: wrap;
+   
+}
+
+.filtro-categorias{
+        outline: none;
+        border-radius: 5px;
+        margin-right: 10px;
+        background-color: white;
+}
+
+.filtro-categorias option {
+    &:hover {
+        background-color: #F45050 // Não está indo
+      }
+}

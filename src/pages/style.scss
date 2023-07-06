@@ -5,9 +5,11 @@
 }
 
 body {
-  background-color: #F8EDE3;
+  background-color: #F0F0F0;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #root {
@@ -29,6 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .lista-livros {
@@ -42,6 +45,14 @@ body {
 
 
 .cabecalho {
-  background-color: gray;
   display: none;
+}
+
+
+.filtro-pesquisa-wrap {
+  display: flex;
+  background-color: #F45050;
+  width:100%;
+  min-width: fit-content;
+  flex-wrap: wrap;
 }

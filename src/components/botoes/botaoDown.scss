@@ -1,15 +1,12 @@
 .botaoDown {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2415/2415418.png');
-    transform: scaleY(-1);
+    background-image: url('https://cdn-icons-png.flaticon.com/512/5777/5777915.png');
     background-repeat: no-repeat;
     background-position: center;
-    filter: contrast(150%);
     background-size: contain;
     width: 30px;
     height: 35px;
-    border-radius: 10px;
     border: none;
-
+    background-color: white;
 
     &:hover {
         transform: scale(1.1) rotateX(180deg);
