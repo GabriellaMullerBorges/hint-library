@@ -17,8 +17,8 @@ interface Livro {
 }
 
 function App() {
-  const [livros, setLivros] = useState (() => {
-  const storedLivros = localStorage.getItem('livros');
+  const [livros, setLivros] = useState<Livro[]>(() => {
+    const storedLivros = localStorage.getItem('livros');
     return storedLivros ? JSON.parse(storedLivros) : [];
   });
 
@@ -31,7 +31,7 @@ function App() {
 
   const addLivro = (title: string, author: string, category: string, name: string) => {
     const lowerCaseTitle = title.toLowerCase();
-    const livroExistente = livros.find((livro: { title: string; }) => livro.title.toLowerCase() === lowerCaseTitle);
+    const livroExistente = livros.find((livro: Livro) => livro.title.toLowerCase() === lowerCaseTitle);
 
     if (livroExistente) {
       setPesquisa(title);
@@ -39,7 +39,7 @@ function App() {
       return;
     }
 
-    const newLivros: Livro = {
+    const newLivro: Livro = {
       id: Math.floor(Math.random() * 10000),
       title,
       author,
@@ -49,21 +49,20 @@ function App() {
       dislike: 0,
     };
 
-    setLivros([...livros, newLivros]);
+    setLivros((prevLivros) => [...prevLivros, newLivro]);
   };
 
   const removeLivro = (id: number) => {
-    const newLivros = livros.filter((livro: { id: number; }) => livro.id !== id);
+    const newLivros = livros.filter((livro: Livro) => livro.id !== id);
     setLivros(newLivros);
   };
 
   const updateLivro = (livro: Livro) => {
-    const updatedLivros = livros.map((livroItem: { id: number; }) =>
+    const updatedLivros = livros.map((livroItem: Livro) =>
       livroItem.id === livro.id ? { ...livroItem, like: livro.like, dislike: livro.dislike } : livroItem
     );
     setLivros(updatedLivros);
   };
-  
 
   return (
     <div className='wraper'>
@@ -71,28 +70,29 @@ function App() {
         <Header />
         <div className='filtro-pesquisa-wrap'>
           <Pesquisa pesquisa={pesquisa} setPesquisa={setPesquisa} />
-          <Filter filter={filter} setFilter={setFilter}/>
+          <Filter filter={filter} setFilter={setFilter} />
         </div>
       </div>
       <div className="form-app-wrap">
-        <LivroForm addLivro={addLivro}/>
+        <LivroForm addLivro={addLivro} />
         <div className="AppStyle">
           <div className='lista-livros'>
             {livros
-              .filter((livro: { category: string; }) =>
-              filter === 'All'
-                ? true
-                : filter === 'Ficção'
-                ? livro.category === 'Ficção'
-                : filter === 'Não-Ficção'
-                ? livro.category === 'Não-Ficção'
-                : filter === 'Profissional'
-                ? livro.category === 'Profissional'
-                : false
-            )
-              .filter((livro: { title: string; }) => livro.title.toLowerCase().includes(pesquisa.toLowerCase()))
-              .map((livro: { id: any; title: string; author: string; category: string; name: string; like: number; dislike: number; }) => (
-                <Livraria key={livro.id} livro={livro} removeLivro={removeLivro} updateLivro={updateLivro} />
+              .filter((livro: Livro) =>
+                filter === 'All'
+                  ? true
+                  : livro.category === filter
+              )
+              .filter((livro: Livro) =>
+                livro.title.toLowerCase().includes(pesquisa.toLowerCase())
+              )
+              .map((livro: Livro) => (
+                <Livraria
+                  key={livro.id}
+                  livro={livro}
+                  removeLivro={removeLivro}
+                  updateLivro={updateLivro}
+                />
               ))}
           </div>
         </div>
