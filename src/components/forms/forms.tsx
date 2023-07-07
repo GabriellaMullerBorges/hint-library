@@ -41,7 +41,7 @@ const LivroForm = ({ addLivro }: LivroFormProps)  => {
             </select>
             <input type='text' placeholder='Seu nome' className='nome' value={name} onChange={(e)=> setName(e.target.value)}></input>
           <div className='button-div'>
-          <button type="submit">Adicionar Livro</button>
+          <button type="submit"> + Adicionar Livro</button>
         </div>  
         </form>     
     </div>

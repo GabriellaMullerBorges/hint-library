@@ -54,3 +54,23 @@ form input, form select {
     margin: 2px;
     height: 3vh;
 }
+
+@media (min-width: 768px) {
+
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        width:auto;
+        height: fit-content;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width:100%;
+        border-radius: 10px;
+    }
+
+    .form-content {
+        width:100%;
+        max-width: none;
+    }
+  }
+  

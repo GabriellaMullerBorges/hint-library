@@ -12,7 +12,7 @@
     box-sizing: border-box;
     padding: 15px;
     min-width: fit-content;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     min-height: 25vh;
 }
 
@@ -28,8 +28,34 @@
     width: 100%;
 }
 
-.description{
+.description {
+    display: flex;
+    flex-wrap: wrap;
     font-family: 'Space Mono', monospace;;
     font-size: 20px;
     margin-left: 8vw;
+}
+
+.description p {
+  display: flex;
+  width: auto;
+  height: fit-content;
+}
+
+
+@media (min-width: 768px) {
+
+  .header {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 1em;
+    border-radius: 15px;
+  }
+
+  .description {
+    display: flex;
+    width: auto;
+    height: fit-content;
+    margin: 0;
+  }
 }

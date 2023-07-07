@@ -1,6 +1,5 @@
 import React from 'react'
 import './header.scss';
-import './dropdown.scss';
 
 const Header = ()=> {
   return (

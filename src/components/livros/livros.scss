@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap');
 
-.livro{
+.livro {
     display: flex;
     flex-direction: row;
     font-family: 'Space Mono', monospace;;
@@ -41,3 +41,35 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media (min-width: 768px) {
+
+    .livro {
+        all: unset;
+        height: auto;
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr 20% auto;
+        color:  #4e515c;
+        background-color: white;
+        border-radius: 8px;
+        font-family: 'Space Mono', monospace;
+        padding: 5px;
+      }
+
+      .content{
+        grid-column: 1;
+        width:auto;
+        height: auto;
+      }
+    
+    .recomendation-div {
+        gap: 1px;
+        grid-column: 2; 
+    }
+
+    .excluir {
+        grid-column: 3;
+      }
+  
+  }
