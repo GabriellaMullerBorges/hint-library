@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap');
 
 .livro {
+    width: 100%;
     display: flex;
     flex-direction: row;
     font-family: 'Space Mono', monospace;;
     justify-content: space-between;
-    min-width: 90vw;
-    max-width: 100%;
     border-radius: 8px;
     padding: 10px;
     color:  #4e515c;

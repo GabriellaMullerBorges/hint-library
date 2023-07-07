@@ -24,6 +24,10 @@ body {
   justify-content: center;
 }
 
+.filtro-pesquisa-wrap, .header-pesquisa-filtro-wrap {
+  width: 100%;
+}
+
 .AppStyle {
   width: 100%;
   display: flex;
@@ -34,11 +38,14 @@ body {
 }
 
 .lista-livros {
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin-top: 1em;
+  gap: 1em;
 }
 
 
