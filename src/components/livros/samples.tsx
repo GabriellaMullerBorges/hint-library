@@ -1,8 +1,9 @@
 import React from 'react';
-import Livraria, { Livro } from './livros';
+import Livraria, { Livro } from '../livros/livros';
 
-const LivrosIniciais: React.FC = () => {
-  const livros: Livro[] = [
+
+export const initialLivros: Livro[] = [
+
     {
       id: 1,
       title: 'Harry Potter',
@@ -50,19 +51,25 @@ const LivrosIniciais: React.FC = () => {
       },
   ];
 
-  return (
-    <div className='lista-livros'>
-      {livros.map((livro: Livro) => (
-        <Livraria
-          key={livro.id}
-          livro={livro}
-          removeLivro={() => {}}
-          updateLivro={() => {}}
-        />
-      ))}
-    </div>
-  );
-};
-
-export default LivrosIniciais;
-
+  interface LivrosIniciaisProps {
+    livros: Livro[];
+    removeLivro: (id: number) => void;
+    updateLivro: (livro: Livro) => void;
+  }
+  
+  const LivrosIniciais: React.FC<LivrosIniciaisProps> = ({ livros, removeLivro, updateLivro }) => {
+    return (
+        <div className='lista-livros'>
+          {livros.map((livro: Livro) => (
+            <Livraria
+              key={livro.id}
+              livro={livro}
+              removeLivro={removeLivro}
+              updateLivro={updateLivro}
+            />
+          ))}
+        </div>
+      );
+    };
+  
+  export default LivrosIniciais;

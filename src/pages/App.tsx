@@ -5,7 +5,7 @@ import Header from '../components/header/header';
 import Pesquisa from '../components/forms/pesquisa';
 import Filter from '../components/Filters/filter';
 import Livraria, { Livro } from '../components/livros/livros';
-import LivrosIniciais from '../components/livros/samples';
+import LivrosIniciais, { initialLivros } from '../components/livros/samples';
 
 function App() {
   const [livros, setLivros] = useState<Livro[]>([]);
@@ -15,10 +15,11 @@ function App() {
 
   useEffect(() => {
     const storedLivros = localStorage.getItem('livros');
-    if (storedLivros) {
-      setLivros(JSON.parse(storedLivros));
+    if (!storedLivros) {
+      setLivros(initialLivros);
+      localStorage.setItem('livros', JSON.stringify(initialLivros));
     } else {
-      setLivros([]);
+      setLivros(JSON.parse(storedLivros));
     }
   }, []);
 
@@ -37,7 +38,7 @@ function App() {
     }
 
     const newLivro: Livro = {
-      id: Math.floor(Math.random() * 10000),
+      id: Math.max(...livros.map((livro) => livro.id)) + 1,
       title,
       author,
       category,
@@ -73,7 +74,11 @@ function App() {
       <div className="form-app-wrap">
         <LivroForm addLivro={addLivro} />
         <div className="AppStyle">
-          <LivrosIniciais />
+          <LivrosIniciais
+            livros={initialLivros}
+            removeLivro={removeLivro}
+            updateLivro={updateLivro}
+          />
           <div className='lista-livros'>
             {livros
               .filter((livro: Livro) =>
@@ -100,3 +105,4 @@ function App() {
 }
 
 export default App;
+
