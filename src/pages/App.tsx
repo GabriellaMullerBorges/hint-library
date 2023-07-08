@@ -1,29 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import Livraria from '../components/livros/livros';
 import './style.scss';
 import LivroForm from '../components/forms/forms';
 import Header from '../components/header/header';
 import Pesquisa from '../components/forms/pesquisa';
 import Filter from '../components/Filters/filter';
-
-interface Livro {
-  id: number;
-  title: string;
-  author: string;
-  category: string;
-  name: string;
-  like: number;
-  dislike: number;
-}
+import Livraria, { Livro } from '../components/livros/livros';
+import LivrosIniciais from '../components/livros/samples';
 
 function App() {
-  const [livros, setLivros] = useState<Livro[]>(() => {
-    const storedLivros = localStorage.getItem('livros');
-    return storedLivros ? JSON.parse(storedLivros) : [];
-  });
+  const [livros, setLivros] = useState<Livro[]>([]);
 
   const [pesquisa, setPesquisa] = useState('');
   const [filter, setFilter] = useState('All');
+
+  useEffect(() => {
+    const storedLivros = localStorage.getItem('livros');
+    if (storedLivros) {
+      setLivros(JSON.parse(storedLivros));
+    } else {
+      setLivros([]);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('livros', JSON.stringify(livros));
@@ -76,6 +73,7 @@ function App() {
       <div className="form-app-wrap">
         <LivroForm addLivro={addLivro} />
         <div className="AppStyle">
+          <LivrosIniciais />
           <div className='lista-livros'>
             {livros
               .filter((livro: Livro) =>

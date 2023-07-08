@@ -4,7 +4,7 @@ import './livros.scss';
 import './excluir.scss';
 import BotaoDown from '../botoes/botaoDown';
 
-interface Livro {
+export interface Livro {
   id: number;
   title: string;
   author: string;
